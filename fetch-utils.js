@@ -7,6 +7,7 @@ export async function createGame(game){
     const newGame = { ...game };
 
     // create a single new game in the games table using the above object
+
     
     return checkError(response);
 }
@@ -14,6 +15,9 @@ export async function createGame(game){
 
 export async function getGames() {
     // select all games from the games table
+    const response = await getGames()
+        .from('games')
+        .select();
 
     return checkError(response);    
 }
