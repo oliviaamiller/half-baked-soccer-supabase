@@ -50,7 +50,7 @@ teamOneAddButton.addEventListener('click', () => {
     score1++;
     
     // display updated data in the current game div
-    currentGameEl.textContent = score1;
+    displayCurrentGameEl();
 });
 
 teamTwoAddButton.addEventListener('click', () => {
@@ -58,7 +58,7 @@ teamTwoAddButton.addEventListener('click', () => {
     score2++;
 
     // display updated data in the current game div
-    currentGameEl.textContent = score2;
+    displayCurrentGameEl();
 });
 
 teamOneSubtractButton.addEventListener('click', () => {
@@ -66,7 +66,7 @@ teamOneSubtractButton.addEventListener('click', () => {
     score1--;
 
     // display updated data in the current game div
-    currentGameEl.textContent = score1;
+    displayCurrentGameEl();
 });
 
 teamTwoSubtractButton.addEventListener('click', () => {
@@ -74,7 +74,7 @@ teamTwoSubtractButton.addEventListener('click', () => {
     score2--;
 
     // display updated data in the current game div
-    currentGameEl.textContent = score2;
+    displayCurrentGameEl();
 });
 
 finishGameButton.addEventListener('click', async() => {
