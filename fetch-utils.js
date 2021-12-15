@@ -22,7 +22,7 @@ export async function createGame(score1, score2, name1, name2){
 
 export async function getGames() {
     // select all games from the games table
-    const response = await getGames()
+    const response = await client
         .from('games')
         .select();
 

@@ -4,6 +4,7 @@ import {
     getGames,
     createGame,
 } from '../fetch-utils.js';
+
 import { renderGame } from '../render-utils.js';
 
 const currentGameEl = document.getElementById('current-game-container');
@@ -80,9 +81,16 @@ teamTwoSubtractButton.addEventListener('click', () => {
 finishGameButton.addEventListener('click', async() => {
     
     // create a new game using the current game state
+    const newGame = {
+        name1: name1,
+        score1: score1,
+        name2: name2,
+        score2: score2
+    };
     
     // re-fetch the games to get the updated state
-    
+    getGames(newGame);
+  
     // reassign the past games state to the re-fetched, updated games
     
     displayAllGames();
@@ -133,12 +141,12 @@ function displayCurrentGameEl() {
 }
 
 
-function displayAllGames() {
+async function displayAllGames() {
     // clear out the past games list in the DOM
     pastGamesEl.textContent = '';
 
     // fetch and loop through the past games 
-    const games = getGames();
+    const games = await getGames();
 
     // render and append a past game for each past game in state
     for (let game of games) {
