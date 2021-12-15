@@ -41,8 +41,7 @@ nameForm.addEventListener('submit', (e) => {
     nameForm.reset();
 
     // display updated data in the current game div
-    data.value = currentGameEl;
-
+    displayCurrentGameEl();
 });
 
 
