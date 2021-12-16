@@ -47,7 +47,7 @@ export async function redirectToGames() {
 }
 
 
-export async function signUpUser(email, password){
+export async function signupUser(email, password){
     const response = await client.auth.signUp({ email, password });
     
     return response.user;

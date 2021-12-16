@@ -87,6 +87,12 @@ finishGameButton.addEventListener('click', async() => {
     displayAllGames();
 
     // reassign the past games state to the re-fetched, updated games
+    name1 = '';
+    name2 = '';
+    score1 = 0;
+    score2 = 0;
+
+    displayCurrentGameEl();
 
 });
 
@@ -97,9 +103,14 @@ logoutButton.addEventListener('click', () => {
  // on load . . .
 window.addEventListener('load', async() => {
     // fetch all games
+    const gameCheck = await getGames();
+
     // check if there are any
+    pastGamesEl.append(gameCheck);
+
     // if there are, set those as the initial state of pastGames
     // then display all the games (hint: call displayAllGames())
+    displayAllGames();
 });
 
 
