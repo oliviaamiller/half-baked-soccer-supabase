@@ -37,12 +37,12 @@ export async function getUser() {
 export async function checkAuth() {
     const user = await getUser();
 
-    if (!user) location.replace('../'); 
+    if (!user) location.replace('../index.html'); 
 }
 
 export async function redirectToGames() {
     if (await getUser()) {
-        location.replace('./games');
+        location.replace('../games');
     }
 }
 
@@ -62,7 +62,7 @@ export async function signInUser(email, password){
 export async function logout() {
     await client.auth.signOut();
 
-    return window.location.href = '../';
+    return window.location.href = '../index.hml';
 }
 
 function checkError({ data, error }) {
