@@ -62,7 +62,7 @@ export async function signInUser(email, password){
 export async function logout() {
     await client.auth.signOut();
 
-    return window.location.href = '../index.hml';
+    return window.location.href = '../index.html';
 }
 
 function checkError({ data, error }) {
