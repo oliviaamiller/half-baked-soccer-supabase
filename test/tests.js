@@ -4,7 +4,13 @@ import { renderGame, renderTeam } from '../render-utils.js';
 
 const test = QUnit.test;
 
-const game = 
+
+
+
+test('renderGame is a function that will return a DOM node', (expect) => {
+    //Arrange
+    // Set up your arguments and expectations
+    const game = 
     {
         name1: 'fish',
         score1: 6,
@@ -13,10 +19,6 @@ const game =
 
     };
 
-
-test('renderGame is a function that will return a DOM node', (expect) => {
-    //Arrange
-    // Set up your arguments and expectations
     const expected = '<div class="game"><div class="team"><p class="name">fish</p><p class="score">6</p></div><div class="team"><p class="name">gulls</p><p class="score">3</p></div></div>';
     
     //Act 
@@ -29,12 +31,16 @@ test('renderGame is a function that will return a DOM node', (expect) => {
 });
 
 test('renderTeam is a function that will return a DOM node', (expect) => {
+    const name ='fish';
+    const score = 6;
 
-    const expected = '<div class="team"><p class="name"></p><p class="score"></p></div>';
+    
+
+    const expected = '<div class="team"><p class="name">fish</p><p class="score">6</p></div>';
 
 
     const actual = renderTeam(name, score);
 
-    expect.equal(actual.outerHTML, expected);
+    expect.equal(actual.outerHTML, expected, 'returns a div with name and score p tags');
 
 });
