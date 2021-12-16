@@ -42,7 +42,7 @@ export async function checkAuth() {
 
 export async function redirectToGames() {
     if (await getUser()) {
-        location.replace('../games');
+        location.replace('../games/index.html');
     }
 }
 
