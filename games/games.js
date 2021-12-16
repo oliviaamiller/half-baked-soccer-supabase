@@ -150,6 +150,7 @@ async function displayAllGames() {
     for (let game of games) {
         const oldGamesEl = renderGame(game);
 
+
         pastGamesEl.append(oldGamesEl);
     }
 }
