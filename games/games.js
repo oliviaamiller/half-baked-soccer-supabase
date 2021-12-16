@@ -81,26 +81,25 @@ teamTwoSubtractButton.addEventListener('click', () => {
 finishGameButton.addEventListener('click', async() => {
     
     // create a new game using the current game state
-    const newGame = {
+    const game = {
         name1: name1,
         score1: score1,
         name2: name2,
         score2: score2
     };
     
-    // re-fetch the games to get the updated state
-    getGames(newGame);
-  
-    // reassign the past games state to the re-fetched, updated games
+    const newGame = await createGame(game);
+    
+   
+    const allGames = await getGames();
+
+    pastGamesEl.textContent = '';
+    for (let game of allGames) {
+        const pastGames = renderGame(game);
+        pastGamesEl.append(pastGames);
+    }
     
     displayAllGames();
-    
-    name1 = '';
-    name2 = '';
-    score1 = 0;
-    score2 = 0;
-
-    displayCurrentGameEl();
 });
 
 logoutButton.addEventListener('click', () => {
